@@ -1,0 +1,27 @@
+---
+import MySiteLayout from "../layouts/MySiteLayout.astro"
+const identity = {
+      firstName: "Sarah",
+      country: "Canada",
+      occupation: "Technical Writer",
+      hobbies: ["photography", "birdwatching", "baseball"],
+}
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
+---
+
+<MySiteLayout title='About'>
+      <h1 class='text-4xl'>About page</h1>
+      <p>Here are a few facts about me:</p>
+      <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as {identity.occupation}.</li>
+            {
+                  identity.hobbies.length >= 2 && (
+                        <li>
+                              Two of my hobbies are : {identity.hobbies[0]} and {identity.hobbies[1]}
+                        </li>
+                  )
+            }
+            <li>Mys skills are: <ol>{skills.map((skill) => <li>{skill}</li>)}</ol></li>
+      </ul>
+</MySiteLayout>
