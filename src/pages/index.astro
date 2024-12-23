@@ -1,7 +1,8 @@
 ---
 import MySiteLayout from "../layouts/MySiteLayout.astro"
+const pageTitle = "Home"
 ---
 
-<MySiteLayout title='Home'>
-      <h1 class='text-4xl'>Home page</h1>
+<MySiteLayout title={pageTitle}>
+      <h1 class="text-4xl">{pageTitle} page</h1>
 </MySiteLayout>
