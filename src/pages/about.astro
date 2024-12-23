@@ -1,37 +1,41 @@
 ---
-import MySiteLayout from "../layouts/MySiteLayout.astro"
-const pageTitle = "About"
+import MySiteLayout from "../layouts/MySiteLayout.astro";
+const pageTitle = "About";
 
 const identity = {
-      firstName: "Sarah",
-      country: "Canada",
-      occupation: "Technical Writer",
-      hobbies: ["photography", "birdwatching", "baseball"],
-}
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
+    firstName: "Sarah",
+    country: "Canada",
+    occupation: "Technical Writer",
+    hobbies: ["photography", "birdwatching", "baseball"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
-const happy = true
-const finished = false
-const goal = 3
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <MySiteLayout title={pageTitle}>
-      <h1 class="text-4xl">{pageTitle} page</h1>
-      <p>Here are a few facts about me:</p>
-      <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>I live in {identity.country} and I work as {identity.occupation}.</li>
-            {
-                  identity.hobbies.length >= 2 && (
+    <section class="bg-white dark:bg-gray-900 h-screen text-white">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+            <h1 class="text-4xl">{pageTitle} page</h1>
+            <p>Here are a few facts about me:</p>
+            <ul>
+                <li>My name is {identity.firstName}.</li>
+                <li>I live in {identity.country} and I work as {identity.occupation}.</li>
+                {
+                    identity.hobbies.length >= 2 && (
                         <li>
-                              Two of my hobbies are : {identity.hobbies[0]} and {identity.hobbies[1]}
+                            Two of my hobbies are : {identity.hobbies[0]} and {identity.hobbies[1]}
                         </li>
-                  )
-            }
-            <li>Mys skills are: <ol>{skills.map((skill) => <li>{skill}</li>)}</ol></li>
-      </ul>
+                    )
+                }
+                <li>Mys skills are: <ol>{skills.map((skill) => <li>{skill}</li>)}</ol></li>
+            </ul>
 
-      {happy && <p>I am happy to be learning Astro!</p>}
-      {finished && <p>I finished this tutorial!</p>}
-      {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+            {happy && <p>I am happy to be learning Astro!</p>}
+            {finished && <p>I finished this tutorial!</p>}
+            {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        </div>
+    </section>
 </MySiteLayout>
