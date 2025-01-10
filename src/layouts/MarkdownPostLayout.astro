@@ -1,0 +1,27 @@
+---
+import MySiteLayout from "./MySiteLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<MySiteLayout title={frontmatter.title}>
+	<article class="bg-white dark:bg-gray-900">
+		<div class="py-8 px-4 mx-auto max-w-screen-xl min-h-screen">
+			<header class="mb-4 lg:mb-6 not-format">
+				<address class="flex items-center mb-6 not-italic">
+					<div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+						<img class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos" />
+						<div>
+							<a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">{frontmatter.author}</a>
+							<p class="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
+							<p class="text-base text-gray-500 dark:text-gray-400"><time datetime="2022-02-08" title="February 8th, 2022">{frontmatter.pubDate.toString().slice(0, 10)}</time></p>
+						</div>
+					</div>
+				</address>
+				<h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">{frontmatter.title}</h1>
+			</header>
+			<p class="lead text-gray-900 dark:text-gray-400"><em>{frontmatter.description}</em></p>
+			<img src={frontmatter.image.url} width="500" alt={frontmatter.image.alt} />
+			<!-- <slot /> -->
+		</div>
+	</article>
+</MySiteLayout>

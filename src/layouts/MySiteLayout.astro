@@ -7,21 +7,21 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body class="bg-white dark:bg-gray-900">
-        <Header />
-        <slot />
-        <Footer />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white dark:bg-gray-900">
+		<Header />
+		<slot />
+		<Footer />
 
-        <script>
-            document.querySelector(".hamburger")?.addEventListener("click", () => {
-                document.querySelector("#navbar-default")?.classList.toggle("expanded");
-            });
-        </script>
-    </body>
+		<script>
+			document.querySelector(".hamburger")?.addEventListener("click", () => {
+				document.querySelector("#navbar-default")?.classList.toggle("expanded");
+			});
+		</script>
+	</body>
 </html>
