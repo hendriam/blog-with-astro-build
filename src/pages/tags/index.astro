@@ -1,0 +1,17 @@
+---
+import MySiteLayout from "../../layouts/MySiteLayout.astro";
+import Tags from "../../components/Tags.astro";
+const allPosts = Object.values(import.meta.glob("../posts/*.md", { eager: true }));
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+const pageTitle = "Tags";
+---
+
+<MySiteLayout title={pageTitle}>
+	<section class="bg-white dark:bg-gray-900 h-screen">
+		<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+			<h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">{pageTitle}</h2>
+			{tags.map((tag: any) => <Tags tag={tag} />)}
+		</div>
+	</section>
+</MySiteLayout>
