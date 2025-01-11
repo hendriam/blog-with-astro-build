@@ -11,7 +11,13 @@ const pageTitle = "Blog";
 			<div class="grid md:grid-cols-2 gap-8">
 				{
 					allPosts.map((post: any) => (
-						<BlogPost title={post.frontmatter.title} url={post.url} imagUrl={post.frontmatter.image.url} imgAlt={post.frontmatter.image.alt} description={post.frontmatter.description} />
+						<BlogPost
+							title={post.frontmatter.title}
+							url={post.url}
+							imagUrl={post.frontmatter.image.url}
+							imgAlt={post.frontmatter.image.alt}
+							description={post.frontmatter.description}
+						/>
 					))
 				}
 			</div>
