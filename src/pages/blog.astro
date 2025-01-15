@@ -1,7 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+// const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+const allPosts = await getCollection("blog");
 const pageTitle = "Blog";
 ---
 
@@ -12,11 +14,11 @@ const pageTitle = "Blog";
 				{
 					allPosts.map((post: any) => (
 						<BlogPost
-							title={post.frontmatter.title}
-							url={post.url}
-							imagUrl={post.frontmatter.image.url}
-							imgAlt={post.frontmatter.image.alt}
-							description={post.frontmatter.description}
+							title={post.data.title}
+							url={`/posts/${post.id}`}
+							imagUrl={post.data.image.url}
+							imgAlt={post.data.image.alt}
+							description={post.data.description}
 						/>
 					))
 				}
