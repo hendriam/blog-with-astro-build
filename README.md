@@ -14,4 +14,4 @@ Additionally, Astro’s growing ecosystem and seamless integration with CMS or e
 
 Have you tried Astro yet? Share your experience in the comments below! 😊
 
-!(public/screenshot.png)
+![screenshot](public/screenshot.png)
